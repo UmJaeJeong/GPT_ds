@@ -1,7 +1,7 @@
 import openai
 
 # OpenAI API 키 설정
-openai.api_key = "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"
+openai.api_key = "OPEN_KEY"
 
 def upload_file(file_path):
     with open(file_path, "rb") as file:
