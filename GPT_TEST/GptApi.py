@@ -11,6 +11,7 @@ import openai
 #개인 key이므로 사용X
 openai.api_key = "OPENAI_API_KEY"
 
+#대화 메시지 저장으로 기존 데이터 보유
 messages = []
 while True:
     user_content = input("사용자 : ")
