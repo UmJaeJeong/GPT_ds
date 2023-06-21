@@ -8,7 +8,7 @@ import openai
 #환경설정에 등록된 key값 
 # openai.api_key = os.getenv("OPENAI_API_KEY")
 
-#개인 key이므로 사용X
+#OPENAI_API_KEY는 발급받아서 사용
 openai.api_key = "OPENAI_API_KEY"
 
 #대화 메시지 저장으로 기존 데이터 보유
