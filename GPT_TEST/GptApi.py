@@ -19,7 +19,7 @@ while True:
 
     #text-davinci-003
     #gpt-3.5-turbo
-    completion = openai.ChatCompletion.create(model="text-davinci-003", messages=messages)
+    completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=messages)
   
 
     assistant_content = completion.choices[0].message["content"].strip()
