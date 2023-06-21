@@ -9,7 +9,7 @@ import openai
 # openai.api_key = os.getenv("OPENAI_API_KEY")
 
 #개인 key이므로 사용X
-openai.api_key = "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"
+openai.api_key = "OPENAI_API_KEY"
 
 messages = []
 while True:
