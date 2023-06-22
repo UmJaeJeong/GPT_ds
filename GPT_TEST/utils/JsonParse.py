@@ -12,4 +12,12 @@ class JsonParse:
         # print(fine_tuned_models)   
         return fine_tuned_models
     
+    @staticmethod
+    def JsonOutputUploadFileList(response):
+        response_data = json.loads(str(response))
+        idList = []
+        for data in response_data['data']:
+            idList.append(data['id'])
+        # print(fine_tuned_models)   
+        return idList
     
