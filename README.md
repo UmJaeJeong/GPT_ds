@@ -12,3 +12,11 @@ GptFineTuning.py
 1) .jsonl파일 업로드(프롬프트에 맞춰야할)
 2) fintuning 생성
 3) playground에서 생성된 모델을 확인가능
+
+
+
+
+--------------------------------------------------------------------------
+CLI 
+openai tools fine_tunes.prepare_data -f <LOCAL_FILE>
+(프롬프트 만들기) 
