@@ -21,4 +21,7 @@ CLI
 openai tools fine_tunes.prepare_data -f <LOCAL_FILE>
 (프롬프트 만들기) 
 
-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
+
+
+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
+
