@@ -20,3 +20,5 @@ GptFineTuning.py
 CLI 
 openai tools fine_tunes.prepare_data -f <LOCAL_FILE>
 (프롬프트 만들기) 
+
+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
