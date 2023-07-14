@@ -23,5 +23,5 @@ openai tools fine_tunes.prepare_data -f <LOCAL_FILE>
 
 
 
-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
+J5yGGbDiaSH8jClT5pxdT3BlbkFJZyEGorEOAK9IWmyAMtHu
 
