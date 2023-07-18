@@ -1,8 +1,9 @@
 import openai
 from utils.JsonParse import JsonParse
+import re
 
 # OpenAI API 키 설정
-openai.api_key = "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"
+openai.api_key = "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"
 
 #파인튜닝 작업 취소
 def fine_tune_cancel(file_id):
@@ -27,7 +28,7 @@ def upload_file(file_path):
 def fine_tune_model(training_file,suffix):
     response = openai.FineTune.create(training_file=training_file,
                                     suffix=suffix,
-                                    model="davinci")
+                                    model="davinci:ft-personal:um2-2023-06-27-08-59-10")
     print(f"*** 등록된 파일 파인튜닝 ***\n{response}\n")
     return response
 
@@ -46,10 +47,12 @@ def fine_tune_model_delete(fine_tuned_model):
     print(f"*** 파인튜닝 삭제 ***\n{response}\n")
     return
 
+#특정 파인튜닝 작업 취소
 def fine_tune_cancel(model_name):
     openai.FineTune.cancel(id=model_name)
     return
 
+#파인튜닝 리스트 출력
 def fine_tuned_list_print(model_list):
     if model_list is not None:
         for model in model_list:
@@ -57,7 +60,7 @@ def fine_tuned_list_print(model_list):
     else:
         print('The list is None')
 
-    
+#모든 파인튜닝 작업 취소    
 def failed_job_cancel():
     # 모든 Fine-tuning 작업 ID 가져오기
     response = openai.FineTune.list()
@@ -74,44 +77,40 @@ def failed_job_cancel():
 
         # 작업 취소
         cancel_response = openai.FineTune.cancel(job_id)
+  
         print(f"Cancelled job: {job_id}")
 
-        
-# fine_tune_cancel('ft-w4yfdRctLESLLozb9GOCH5rb')
+
+
+# fine_tune_cancel('ft-OuFfe72FB1YSqrF9VEyhedWg')
+
 # failed_job_cancel()
 
 # # 파일 업로드 실행
-# file_path = "rater2_prepared.jsonl"  # 업로드할 파일 경로
+# file_path = "rater_update_prepared_train.jsonl"  # 업로드할 파일 경로
 # file_id = upload_file(file_path)
 # print(f"File uploaded successfully. File ID: {file_id}")
 
 # #업로된 파일 파인튜닝(학습)
 # training_file = file_id  # 학습 파일의 ID 또는 경로
-# response = fine_tune_model(training_file,'um2')
+# response = fine_tune_model('file-GQGW3e7LxlpUBFgn3thvSWTO','um_krater_up')
 
 #여기까지만해서 파인튜닝 생성하면 playground에서 model명이 추가된것이 확인된다. 
 #모델명 ex) curie:ft-personal-2023-06-21-08-32-40
 #모델명 ex) davinci:ft-personal-2023-06-21-08-32-40
 
 # 파인튜닝 목록 실행 / 튜닝모델만 파싱해서 출력
-# mode_list = fine_tune_model_list()
+mode_list = fine_tune_model_list()
 
 
 #파인튜닝 삭제 (1개)
 # fine_tune_model_delete('')
 
-#파인튜닝 리스트 전체 삭제 / 목록실행과 같이 사용 
+# #파인튜닝 리스트 전체 삭제 / 목록실행과 같이 사용 
 # for fine_tuned_model in mode_list:
 #     print(fine_tuned_model)
-#     # fine_tune_model_delete(fine_tuned_model)
+# #     # fine_tune_model_delete(fine_tuned_model)
 #     fine_tune_cancel(fine_tuned_model)
-
-
-# 응답 값 활용 예시
-# model_id = response['model']
-# status = response['status']
-# print(f"Fine-tuned model ID: {model_id}")
-# print(f"Fine-tuning status: {status}")
 
 
 
@@ -130,3 +129,9 @@ def failed_job_cancel():
 #     res = openai.File.delete(file)
 #     print(res)
 
+
+# 응답 값 활용 예시
+# model_id = response['model']
+# status = response['status']
+# print(f"Fine-tuned model ID: {model_id}")
+# print(f"Fine-tuning status: {status}")
