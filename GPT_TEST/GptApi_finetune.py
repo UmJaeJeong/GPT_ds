@@ -2,7 +2,7 @@ import openai
 import re
 
 # OpenAI API 인증 설정
-openai.api_key = "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"
+openai.api_key = ""
 
 
 def chat_with_model(message):
