@@ -7,7 +7,7 @@ import re
 #Chat-GPT4로 했을때 채팅이 가능하고 / GPT3는 채팅이 불가능핟 그래서 히스토리를 사용행야함
 
 # OpenAI API 인증 설정
-openai.api_key = "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"
+openai.api_key = ""
 
 
 messages = []
