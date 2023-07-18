@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import openai
 
 # OpenAI API 인증 설정
-openai.api_key = "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"
+openai.api_key = ""
 
 def extract_text_from_website(url):
     # 웹사이트에 GET 요청을 보냅니다.
