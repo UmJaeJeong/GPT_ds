@@ -3,7 +3,7 @@ from utils.JsonParse import JsonParse
 import re
 
 # OpenAI API 키 설정
-openai.api_key = "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"
+openai.api_key = ""
 
 #파인튜닝 작업 취소
 def fine_tune_cancel(file_id):
