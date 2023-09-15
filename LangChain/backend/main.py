@@ -14,7 +14,7 @@ from langchain.chains import RetrievalQA
 from langchain.document_loaders import DirectoryLoader, TextLoader
 
 
-api_key = "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"
+api_key = "키값을 넣어주세요"
 os.environ["OPENAI_API_KEY"] = api_key
 
 # FastAPI 앱 생성
@@ -22,7 +22,6 @@ app = FastAPI()
 
 qa_chain = None
 # OpenAI API 키 설정
-openai.api_key = "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"
 
 # FastAPI의 startup 이벤트를 사용하여 초기화 함수 등록
 @app.on_event("startup")
