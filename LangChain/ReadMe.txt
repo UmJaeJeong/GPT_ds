@@ -5,3 +5,12 @@ Backend 폴더
 
 1,2번을 각각 실행시켜 동작함 
 이미ktdata 폴더에 요금제내용이 포함된 txt파일이 있음.
+
+
+
+
+pip install openai
+pip install langchain
+pip install tiktoken
+pip install chromadb
+
