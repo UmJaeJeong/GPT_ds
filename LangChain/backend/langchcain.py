@@ -8,7 +8,7 @@ from langchain.chains import RetrievalQA
 from langchain.document_loaders import DirectoryLoader, TextLoader
 
 
-api_key = "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"
+api_key = "키값을 넣어주세요"
 os.environ["OPENAI_API_KEY"] = api_key
 
 
